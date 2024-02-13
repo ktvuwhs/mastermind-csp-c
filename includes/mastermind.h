@@ -4,6 +4,6 @@
 #include "main.h"
 
 uint8_t* MakeCode(size_t size);
-bool CheckCode(uint8_t* guess, uint8_t* code, char* result, const size_t kSize);
+uint8_t CheckCode(uint8_t* guess, uint8_t* code, char* result, const size_t kSize);
 
 #endif
