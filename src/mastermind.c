@@ -2,7 +2,7 @@
 
 uint8_t* MakeCode(size_t size)
 {
-    uint8_t* p = (uint8_t*) malloc(size);
+    uint8_t* p = (uint8_t*) malloc(size*sizeof(uint8_t));
     for (size_t i = 0; i < size; ++i)
     {
         p[i] = rand() % 10;
