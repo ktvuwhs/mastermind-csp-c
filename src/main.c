@@ -4,7 +4,7 @@ int main(void)
 {
     const size_t kSize = 4;
     uint8_t num_guess = 0;
-    bool isWin = false;
+    int isWin = 0;
     char result[] = "XXXX";
     uint8_t* code = MakeCode(kSize);
     uint8_t* guess = (uint8_t*) malloc(kSize);
