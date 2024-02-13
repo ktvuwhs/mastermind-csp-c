@@ -9,7 +9,9 @@ int main(void)
     uint8_t* code = MakeCode(kSize);
     uint8_t* guess = (uint8_t*) malloc(kSize);
 
-    while (!isWin)
+    printf("Answer is 1 7 4 0\n");
+
+    while (isWin != 1)
     {
         printf("Enter your guess\n");
         for (size_t i = 0; i < kSize; ++i)
