@@ -4,10 +4,10 @@
 #define SIZE 4
 
 // #include <stdbool.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdint.h> // uint8_t
+#include <stdio.h>  // printf, scanf
+#include <stdlib.h> // malloc, calloc
+#include <string.h> // strcmp
 
 #include "mastermind.h"
 
