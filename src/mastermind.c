@@ -13,7 +13,7 @@ uint8_t* MakeCode(size_t size)
 
 char* CheckCode(uint8_t* guess, uint8_t* code, const size_t size)
 {
-    char* result = (char*) malloc((size+1) * sizeof(char));
+    char* result = (char*) calloc((size+1), sizeof(char));
     for (size_t i = 0; i < SIZE; ++i)
     {
         result[i] = 'X';
@@ -22,6 +22,5 @@ char* CheckCode(uint8_t* guess, uint8_t* code, const size_t size)
             result[i] = 'O';
         }
     }
-    result[size] = '\0';
     return result;
 }
