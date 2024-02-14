@@ -2,24 +2,23 @@
 
 int main(void)
 {
-    const size_t kSize = 4;
+    char* result = calloc(SIZE+1, sizeof(char));
     uint8_t num_guess = 0;
-    int isWin = 0;
-    char result[] = "XXXX";
-    uint8_t* code = MakeCode(kSize);
-    uint8_t* guess = (uint8_t*) malloc(kSize);
+    uint8_t* code = MakeCode(SIZE);
+    uint8_t* guess = (uint8_t*) malloc(SIZE);
 
     printf("Answer is 1 7 4 0\n");
 
-    while (isWin != 1)
+    while (strcmp(result, "OOOO"))
     {
         printf("Enter your guess\n");
-        for (size_t i = 0; i < kSize; ++i)
+        for (size_t i = 0; i < SIZE; ++i)
         {
             scanf("%d", &guess[i]);
         }
 
-        isWin = CheckCode(guess, code, result, kSize);
+        free(result);
+        result = CheckCode(guess, code, SIZE);
         printf("%s\n", result);
         ++num_guess;
     }
@@ -28,7 +27,9 @@ int main(void)
     
     free(code);
     free(guess);
+    free(result);
     code = NULL;
     guess = NULL;
+    result = NULL;
     return 0;
 }

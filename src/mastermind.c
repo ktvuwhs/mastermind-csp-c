@@ -11,17 +11,17 @@ uint8_t* MakeCode(size_t size)
 }
 
 
-uint8_t CheckCode(uint8_t* guess, uint8_t* code, char* result, const size_t kSize)
+char* CheckCode(uint8_t* guess, uint8_t* code, const size_t size)
 {
-    size_t output = 0;
-    for (size_t i = 0; i < kSize; ++i)
+    char* result = (char*) malloc((size+1) * sizeof(char));
+    for (size_t i = 0; i < SIZE; ++i)
     {
         result[i] = 'X';
         if (guess[i] == code[i])
         {
             result[i] = 'O';
-            ++output;
         }
     }
-    return output == kSize;
+    result[size] = '\0';
+    return result;
 }
