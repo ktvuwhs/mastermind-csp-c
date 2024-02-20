@@ -5,7 +5,7 @@ int main(void)
     char* result = calloc(SIZE+1, sizeof(char));
     uint8_t num_guess = 0;
     uint8_t* code = MakeCode(SIZE);
-    uint8_t* guess = (uint8_t*) malloc(SIZE);
+    uint8_t* guess = calloc(SIZE, sizeof(uint8_t));
 
     printf("Answer is 1 7 4 0\n");
 
@@ -14,7 +14,7 @@ int main(void)
         printf("Enter your guess\n");
         for (size_t i = 0; i < SIZE; ++i)
         {
-            scanf("%d", &guess[i]);
+            scanf_s("%d", &guess[i]);
         }
 
         free(result);
@@ -26,10 +26,12 @@ int main(void)
     printf("It took you %d guesses\n", num_guess);
     
     free(code);
-    free(guess);
-    free(result);
     code = NULL;
+
+    free(guess);
     guess = NULL;
+    
+    free(result);
     result = NULL;
     return 0;
 }
