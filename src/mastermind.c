@@ -1,8 +1,8 @@
 #include "../includes/mastermind.h"
 
-uint8_t* MakeCode(size_t size)
+int* MakeCode(size_t size)
 {
-    uint8_t* p = (uint8_t*) malloc(size*sizeof(uint8_t));
+    int* p = (int*) malloc(size * sizeof(int));
     for (size_t i = 0; i < size; ++i)
     {
         p[i] = rand() % 10;
@@ -11,7 +11,7 @@ uint8_t* MakeCode(size_t size)
 }
 
 
-char* CheckCode(uint8_t* guess, uint8_t* code, const size_t size)
+char* CheckCode(int* guess, int* code, size_t const size)
 {
     char* result = (char*) calloc((size+1), sizeof(char));
     for (size_t i = 0; i < SIZE; ++i)

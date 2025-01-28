@@ -4,17 +4,21 @@ int main(void)
 {
     char* result = calloc(SIZE+1, sizeof(char));
     uint8_t num_guess = 0;
-    uint8_t* code = MakeCode(SIZE);
-    uint8_t* guess = calloc(SIZE, sizeof(uint8_t));
+    int* code = MakeCode(SIZE);
+    int* guess = calloc(SIZE, sizeof(int));
 
-    printf("Answer is 1 7 4 0\n");
+    printf("Answer is ");
+    for (int i = 0; i < SIZE; ++i)
+    {
+        printf("%d ", code[i]);
+    }
 
     while (strcmp(result, "OOOO"))
     {
-        printf("Enter your guess\n");
+        printf("\nEnter your guess\n");
         for (size_t i = 0; i < SIZE; ++i)
         {
-            scanf_s("%d", &guess[i]);
+            scanf("%d", &guess[i]);
         }
 
         free(result);
