@@ -1,5 +1,7 @@
 #include "../includes/mastermind.h"
 
+#include <stdlib.h>
+
 int* MakeCode(size_t size)
 {
     int* p = (int*) malloc(size * sizeof(int));
@@ -14,7 +16,7 @@ int* MakeCode(size_t size)
 char* CheckCode(int* guess, int* code, size_t const size)
 {
     char* result = (char*) calloc((size+1), sizeof(char));
-    for (size_t i = 0; i < SIZE; ++i)
+    for (size_t i = 0; i < size; ++i)
     {
         result[i] = 'X';
         if (guess[i] == code[i])
