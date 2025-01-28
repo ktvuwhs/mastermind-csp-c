@@ -8,6 +8,7 @@
 #include <stdio.h>  // printf, scanf
 #include <stdlib.h> // malloc, calloc
 #include <string.h> // strcmp
+#include <time.h>
 
 #include "mastermind.h"
 

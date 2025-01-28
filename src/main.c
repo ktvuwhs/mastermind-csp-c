@@ -2,6 +2,7 @@
 
 int main(void)
 {
+    srand(time(0));
     char* result = calloc(SIZE+1, sizeof(char));
     uint8_t num_guess = 0;
     int* code = MakeCode(SIZE);
