@@ -24,5 +24,6 @@ char* CheckCode(int* guess, int* code, size_t const size)
             result[i] = 'O';
         }
     }
+    result[size] = '\0';
     return result;
 }
