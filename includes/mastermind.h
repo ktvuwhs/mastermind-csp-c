@@ -5,5 +5,6 @@
 
 int* MakeCode(size_t size);
 char* CheckCode(int* guess, int* code, size_t const size);
+int DifficultySize(int const diff);
 
 #endif

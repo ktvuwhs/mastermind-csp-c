@@ -3,22 +3,12 @@
 int main(void)
 {
     srand(time(0));
-    printf("Welcome to Number Wordle!\nChoose your difficulty:\n1. Easy\n2. Medium\n3. Hard\n> ");
+    printf("Welcome to Number Wordle!\nChoose your difficulty (1, 2, 3):\n1. Easy\n2. Medium\n3. Hard\n> ");
     int diff = 0;
-    int size = 4;
+    int size;
     scanf("%d", &diff);
-    switch (diff) {
-        case 2:
-            size = 6;
-            break;
-        case 3:
-            size = 8;
-            break;
-        case 1:
-        default:
-            size = 4;
-            break;
-    }
+    size = DifficultySize(diff);
+
     char* result = calloc(size+1, sizeof(char));
     char* win_con = calloc(size+1, sizeof(char));
     uint8_t num_guess = 0;

@@ -27,3 +27,9 @@ char* CheckCode(int* guess, int* code, size_t const size)
     result[size] = '\0';
     return result;
 }
+
+int DifficultySize(int const diff) {
+    if (diff == 2) return 6;
+    if (diff == 3) return 8;
+    return 4;
+}
