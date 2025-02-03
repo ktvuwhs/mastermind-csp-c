@@ -27,7 +27,7 @@ int main(void)
     }
     win_con[size] = '\0';
 
-    printf("Try and guess the secret code.  An \"O\" means your number is correct, and an \"X\" means it is incorrect.\n");
+    printf("Try and guess the secret code.  An \"O\" means your number is correct, a \"+\" means the number is in the secret code, but in the incorrect spot, and an \"X\" means it is incorrect.\n");
     while (strcmp(result, win_con))
     {
         printf("\nEnter your guess (%d numbers) with spaces in between each number\n", size);
